@@ -19,7 +19,7 @@ Currently I have converted some of the manual into markdown in the docs section.
 
 <p> <br /> </p>
 
-Additionally there is some scaffolding for a fundamentals of FRC section, meant to exist as a wiki for low resource robotics. 
+Additionally there is some scaffolding for a fundamentals of FRC section. I am not sure what the scope of this should be, for the coming year I would like to make articles for the planned skill videos. 
 
 <p> <br /> </p>
 
@@ -84,23 +84,15 @@ With the pages being broken up as they are, users should have to load a max of 5
 
 ### The Big Question: Should We Use It?
 
-Maybe, I am not sure yet. It has the potential to look significantly better than a Google Doc but it can also easily look worse if care is not taken. It is based on the same type of file as GitBooks (markdown files) but it allows for the usage of Javascript and is built with react which allows for infinite customization. <p> <br /> </p>
+I was skeptical but after showing it to my students I am firmly in the yes camp. It has the potential to look significantly better than a Google Doc but it does take a bit more work. It is based on the same type of file as GitBooks (markdown files) but it allows for the usage of Javascript and is built with react which allows for infinite customization. <p> <br /> </p>
 
-Right now the biggest hurdles are installation, collaboration and infrastructure. There are some major disadvantages but I plan on going more in depth on these issues later on as they are constantly evolving. 
+Right now the biggest hurdles are installation, collaboration and infrastructure. These are some major disadvantages but I plan on going more in depth on these issues later on as they are constantly evolving. 
 
-Videos and documentation should benefit from each-other and I believe this might be the best way to achieve that. That being said, a Google Doc like format might not be the best for an instruction manaul. 
-
-<div>
-    <ul>
-        <li>Should instructions have steps?</li>
-        <li>Do pages have a purpose?</li>
-        <li>Will it be too much work in-season? Can we teach students to help with it? (yes)</li>
-    </ul>
-</div>
+Videos and documentation should benefit from each-other and I believe this might be the best way to achieve that. After showing it to my students it was very clear that this format works significantly better the Google Doc. It was more responsive, it took less than a second to load a section on their chromebooks as opposed to over a minute with the Google Doc. Additionally my students did struggle to navigate the manual and the website's layout made it straightfoward to find what they were looking for. (I had a demo laptop, none of the students have the URL, currently only Bluejay and Jenna have the URL).
 
 Anyway here is what the vendor's documentation looks like: 
 
-[REV Starter Bot](https://docs.revrobotics.com/frc-kickoff-concepts/charged-up-2023/starter-bot-2023-rev-ion-frc/2023-rev-ion-frc-starter-bot-build-guide): Half of the images will not load, not sure if that is a me problem. They use GitBook. 
+[REV Starter Bot](https://docs.revrobotics.com/frc-kickoff-concepts/charged-up-2023/starter-bot-2023-rev-ion-frc/2023-rev-ion-frc-starter-bot-build-guide): Half of the images did not load for a few months on different devices, not sure if that was a me problem. They use GitBook. 
 
 [WCP](https://docs.wcproducts.com/wcp-single-stage-gearbox/): GitBooks users.
 
