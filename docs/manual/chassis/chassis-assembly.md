@@ -5,6 +5,28 @@ sidebar_position: 5
 
 # Chassis Assembly
 
+<details >
+    <summary>
+    Sectional Video
+    </summary>
+    <div>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/def5QH7UUIU">
+    </iframe>
+    </div>
+</details>
+
+<details >
+    <summary>
+    Relevant Skill Videos
+    </summary>
+    <div>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/def5QH7UUIU">
+    </iframe>
+    </div>
+</details>
+
 <p><br /> </p>
 
 The 2023 Everybot uses the Chassis End Plates in an upside down configuration as compared to the normal Kit of Parts chassis. Normally, the flange with two rows of holes is considered the top of the End Plates, but on the Everybot the longer flange is on the bottom and the flange with a single row of holes is on the top.

@@ -17,7 +17,8 @@ The Superstructure is made up of six main machined pieces of tube stock with a n
 
 <p><br /> <br /> <br /> </p>
 
-If at any point you are unsure of what a direction or diagram is telling you to do, please ask for clarification in the Everybot <span style={{ textDecoration: "underline"}}><a class="c21" href="https://www.google.com/url?q=https://discord.gg/XuWfwRJcfA&amp;sa=D&amp;source=editors&amp;ust=1690489001419305&amp;usg=AOvVaw0TGqFOAdanrGYHY1SYcv7Y">Discord</a></span>! This is the fastest way to get an answer from the Everybot team, and questions we see there will help us to revise this manual to make steps more clear for other Everybot builders.
+<span />If at any point you are unsure of what a direction or diagram is telling you to do, please ask for clarification in the Everybot <span style={{ textDecoration: "underline"}}><a class="c21" href="https://www.google.com/url?q=https://discord.gg/XuWfwRJcfA&amp;sa=D&amp;source=editors&amp;ust=1690489001419305&amp;usg=AOvVaw0TGqFOAdanrGYHY1SYcv7Y">Discord</a></span>! This is the fastest way to get an answer from the Everybot team, and questions we see there will help us to revise this manual to make steps more clear for other Everybot builders.
+
 
 <p><br /> <br /> <br /> </p>
 

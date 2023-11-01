@@ -4,6 +4,8 @@ import ReactCrop from 'react-image-crop';
 import { saveAs } from 'file-saver';
 import '/cropper-plugin/ReactCrop.css';
 
+//How to use: use the proper extension (currently ebot/cropper), then add html file, images from html and md from email. mdfile goes first and html file goes last (this should be fixed)
+
 //ImporterV3 is written terribly, the 2nd iteration was cleaner but lacked features, in adding the new features I should have started from scratch but was lazy, this needs to eventually be cleaned up 
 //GL following the regex :?
 
@@ -29,8 +31,10 @@ function Importerv3() {
             console.log("called");
             modifyFiles();
         }
-        if (numImages != 0 && numImages != files.length - 2) {
-            throw new Error("The number of images supplied does not match the number of images found in the google doc. Please make sure all positioned images are 'move with text' and not 'fix position to page'.")
+        if (numImages != 0 && numImages != files.length - 2 && doneSorting == true) {
+            //check for dupes here
+            checkForDuplicateImages()
+            //throw new Error("The number of images supplied does not match the number of images found in the google doc. Please make sure all positioned images are 'move with text' and not 'fix position to page'.")
         }
     }, [importMD, files, numImages, doneSorting])
 
@@ -46,10 +50,11 @@ function Importerv3() {
                 setOutputImages(outputImages);
                 setOUtputImageText(outputImageText)
                 let htmlText = splitHTML[i].split('<img')[1].split('\.png\" ')[1];
+                let bumperPlateDir = "<img src={require(\"/static/media/"
                 let mdText = importMD[imageIndex].split('default\}')[0];
                 //console.log(index)
                 //console.log('<div style={{overflow' + splitHTML[i].split('<img')[0] + mdText + 'default\} ' + htmlText.split('\}\}')[0] + ', maxWidth: "none"\}\}' + htmlText.split('\}\}')[1]);
-                newHTML += '<div style={{overflow' + splitHTML[i].split('<img')[0] + mdText + 'default\} ' + htmlText.split('\}\}')[0] + ', maxWidth: "none"\}\}' + htmlText.split('\}\}')[1];
+                newHTML += '<div style={{overflow' + splitHTML[i].split('<img')[0] + bumperPlateDir + mdText + 'default\} ' + htmlText.split('\}\}')[0] + ', maxWidth: "none"\}\}' + htmlText.split('\}\}')[1];
                 imageIndex += 1;
                 //return mdText + 'default\} ' + htmlText.split('\}\}')[0] + ', maxWidth: "none"\}\}' + htmlText.split('\}\}')[1];
             }
@@ -59,8 +64,10 @@ function Importerv3() {
                 setOutputImages(outputImages);
                 setOUtputImageText(outputImageText)
                 let htmlText = splitHTML[i].split('<img')[1].split('\.jpg\" ')[1];
+                let bumperPlateDir = "<img src={require(\"/static/media/"
                 let mdText = importMD[imageIndex].split('default\}')[0];
-                newHTML += '<div style={{overflow' + splitHTML[i].split('<img')[0] + mdText + 'default\} ' + htmlText.split('\}\}')[0] + ', maxWidth: "none"\}\}' + htmlText.split('\}\}')[1];
+                console.log(mdText);
+                newHTML += '<div style={{overflow' + splitHTML[i].split('<img')[0] + bumperPlateDir + mdText + 'default\} ' + htmlText.split('\}\}')[0] + ', maxWidth: "none"\}\}' + htmlText.split('\}\}')[1];
                 imageIndex += 1;
             }
             else {
@@ -71,7 +78,7 @@ function Importerv3() {
     }
 
     //If more than one image is floated then the last floated one will be the closest to the page edge, this needs to be fixed
-    //Somewhere the image width should be check to ensure that when margins are added to images they do not overflow.
+    //Somewhere the image width should be checked to ensure that when margins are added to images they do not overflow.
     const modifySpanTag = (newHTML, imageIndex) => {
         let splitHTML = newHTML.split(/<div style={{overflow/);
         newHTML = '';
@@ -177,6 +184,7 @@ function Importerv3() {
     }
 
     //styles we need to care about: text-align:center, color, font-weight, maybe font size
+    //PLEASE FIX THIS LATER, IT IS HORRIBLE
     const setupStyles = function (htmlHead) {
         let tempStyles = htmlHead.split('table th')[1].match(/(?<=\}).*?(?=\})/g);
         let collectedStyles = [];
@@ -184,6 +192,9 @@ function Importerv3() {
             collectedStyles[i] = tempStyles[i].split('\{')[0] + ' ';
             let len = collectedStyles[i].length;
             if (tempStyles[i].match(/text-align:center/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
                 collectedStyles[i] += "textAlign: 'center'";
             }
             if (tempStyles[i].match(/color:/)) {
@@ -213,6 +224,92 @@ function Importerv3() {
                 }
                 collectedStyles[i] += 'textDecoration: "' + tempStyles[i].match(/(?<=text-decoration:).*?(?=;|$|\})/) + '"';
             }
+            if (tempStyles[i].match(/padding:/) && !tempStyles[i].match(/0px 0px 0px 0px/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'padding: "' + tempStyles[i].match(/(?<=padding:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-bottom-color/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-bottom-color: "' + tempStyles[i].match(/(?<=border-bottom-color:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-top-width/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-top-width: "' + tempStyles[i].match(/(?<=border-top-width:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-right-width/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-right-width: "' + tempStyles[i].match(/(?<=border-right-width:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-left-color/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-left-color: "' + tempStyles[i].match(/(?<=border-left-color:).*?(?=;|$|\})/) + '"';
+            }
+            /*
+            if (tempStyles[i].match(/vertical-align/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'vertical-align: "' + tempStyles[i].match(/(?<=vertical-align:).*?(?=;|$|\})/) + '"';
+            }*/
+            if (tempStyles[i].match(/border-right-color/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-right-color: "' + tempStyles[i].match(/(?<=border-right-color:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-left-width/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-left-width: "' + tempStyles[i].match(/(?<=border-left-width:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-top-style/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-top-style: "' + tempStyles[i].match(/(?<=border-top-style:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-left-style/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-left-style: "' + tempStyles[i].match(/(?<=border-left-style:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-bottom-width/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-bottom-width: "' + tempStyles[i].match(/(?<=border-bottom-width:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/ width/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'width: "' + tempStyles[i].match(/(?<= width:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-top-color/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-top-color: "' + tempStyles[i].match(/(?<=border-top-color:).*?(?=;|$|\})/) + '"';
+            }
+            if (tempStyles[i].match(/border-bottom-style/)) {
+                if (collectedStyles[i].length != len) {
+                    collectedStyles[i] += ', ';
+                }
+                collectedStyles[i] += 'border-bottom-style: "' + tempStyles[i].match(/(?<=border-bottom-style:).*?(?=;|$|\})/) + '"';
+            }
+
         }
         let goodTags = {
             "h1": true,
@@ -224,7 +321,11 @@ function Importerv3() {
             "ol": true,
             "ul": true,
             "li": true,
-            "a": true
+            "a": true,
+            "table": true,
+            "tbody": true,
+            "tr": true,
+            "td": true
         };
         for (let i = 0; i < collectedStyles.length; i++) {
             if (!collectedStyles[i].match(/\.?\w\d*?\s$/) && !goodTags.hasOwnProperty(collectedStyles[i].match(/\S+/)[0])) {
@@ -245,7 +346,7 @@ function Importerv3() {
     //I will use a video to explain this function as comments will not help you with this mess
     //Cannot handle tables, might want that feature
     const setupHTML = async (htmlContent) => {
-        htmlContent = htmlContent.split('</head>')[1].match(/(?<=>).*/)[0];
+        htmlContent = htmlContent.split('</head>')[1].match(/(?<=>)[\s\S]*/)[0];
         let numSpaces = 0;
         let currIndex = 0;
         let imageNum = 0;
@@ -256,6 +357,7 @@ function Importerv3() {
         topLevel[currIndex] = htmlContent.slice(0, split + 1 + currTopLevel.length);
         htmlContent = htmlContent.slice(split + 1 + currTopLevel.length);
         while (htmlContent != '</html>') {
+            console.log(currTopLevel)
             if (currTopLevel == 'hr') {
                 topLevel[currIndex] += htmlContent.slice(0, htmlContent.search('>') + 1);
                 htmlContent = htmlContent.slice(htmlContent.search('>') + 1)
@@ -274,6 +376,7 @@ function Importerv3() {
             let foundTag = false;
             let closeTag = new RegExp(`(?<=</)${currTopLevel}(?=>)`);
             let falseTagFinder = new RegExp(`(?<=<)${currTopLevel}(?=>| )`);
+            let footerFinder = new RegExp(`img alt="[^"].*\/`)
             //while(!foundTag)
             //{
             if (htmlContent.search(closeTag) > htmlContent.search(falseTagFinder) && htmlContent.search(falseTagFinder) != -1) {
@@ -281,6 +384,15 @@ function Importerv3() {
             }
             else if (htmlContent.search(closeTag) == -1) {
                 throw new Error("HMTL not correctly parsed, please contact Jack and send them the HTML with this error message :)");
+            }
+            else if (htmlContent.search(footerFinder) < htmlContent.search(closeTag)) {
+                //setupMD(mdText);
+                var txt = document.createElement("textarea");
+                txt.innerHTML = htmlContent.slice(0, htmlContent.search(closeTag) + 1 + currTopLevel.length).match(/(?<=img alt=")[^"]*/)[0];
+                txt.value;
+                console.log(txt.value);
+                htmlContent = '</html>';
+                setupMD(txt.value);
             }
             else {
                 topLevel[currIndex] += htmlContent.slice(0, htmlContent.search(closeTag) + 1 + currTopLevel.length);
@@ -312,7 +424,11 @@ function Importerv3() {
             "ul": true,
             "li": true,
             "a": true,
-            "hr": true
+            "hr": true,
+            "table": true,
+            "tbody": true,
+            "tr": true,
+            "td": true
         };
         currIndex = 0;
         imageNum = 0;
@@ -322,11 +438,12 @@ function Importerv3() {
             let altParent = ''
             let currentParentElement = '';
             let ignoreEndTags = {};
+            let tablePChecker = false;
             let desiredTag = false;
             let elementInit = false;
             let hasContent = false;
             let endRun = false;
-            usePageBreak = false
+            usePageBreak = false;
             importedHTML[currIndex] = '';
             if (topLevel[i].match(/^<[^>]*?\sclass[^>]*?>/) && !goodTags.hasOwnProperty(headParent)) {
 
@@ -351,10 +468,7 @@ function Importerv3() {
                 hasContent = true;
                 const reg = /-\webkit\-transform: 'rotate\(\d{1}\.\d{2}rad\) translateZ\(\d{1}px\)',/;
                 let res = topLevel[i].match(/<\/span>/)[0].split('span style')[1].replaceAll(";", "',").replaceAll(": ", ": '").replaceAll('margin-left', 'marginLeft').replaceAll('margin-top', 'marginTop').replace(reg, "")
-
-                    .replaceAll('border: 0.00px solid #000000,', '').replace('="', "").replaceAll(/, -webkit-transform: 'rotate\(-?\d+\.\d+rad\) translateZ\(\d\.?\d*?px\)'[,;]/g, "").replace('px,"', "px").replace('>', '}}>').replace('">', "'}}>").replace("style=", "style={{ ")
-                    .replace("px',\"", "px'").replace("\" title=\"'", "").replace("\"width", 'width');
-
+                    .replaceAll('border: 0.00px solid #000000,', '').replace('="', "").replaceAll(/, -webkit-transform: 'rotate\(-?\d+\.\d+rad\) translateZ\(\d\.?\d*?px\)'[,;]/g, "").replace('px,"', "px").replace('>', '}}>').replace('">', "'}}>").replace("style=", "style={{ ").replace("px',\"", "px'").replace("\" title=\"'", "").replace("\"width", 'width');
 
                 let frontTag = "<div style={{overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px'}}>"
 
@@ -407,7 +521,11 @@ function Importerv3() {
                         }
                         if (desiredTag == true) {
                             if (currentParentElement == 'span') {
+                                console.log('ignored SPAN ' + topLevel[i]);
                                 ignoreEndTags[currentParentElement] = false;
+                            }
+                            else if (currentParentElement == 'p') {
+                                tablePChecker = true;
                             }
                             importedHTML[currIndex] += '}}>';
                         }
@@ -433,10 +551,8 @@ function Importerv3() {
                         topLevel[i] = topLevel[i].replace(/^<\/.*?>/, '');
                         importedHTML[currIndex] += res;
                         imageNum += 1;
-
-
                     }
-                    //something like <a>, header: h1, h2 or list element <ol>, <li>, <ul>
+                    //something like <a>, header: h1, h2 or list element <ol>, <li>, <ul> or a table element
                     else if (goodTags.hasOwnProperty(currentParentElement)) {
                         desiredTag = true;
                         if (currentParentElement == 'hr') {
@@ -454,6 +570,7 @@ function Importerv3() {
                         else {
                             importedHTML[currIndex] += '<' + currentParentElement + '>';
                             topLevel[i] = topLevel[i].replace(/<(?<=<).*?>/, '');
+                            console.log(topLevel[i]);
                         }
                     }
                     else {
@@ -461,7 +578,6 @@ function Importerv3() {
                     }
                     if (desiredTag == false) {
                         ignoreEndTags[currentParentElement] = true;
-
                     }
                 }
                 //is the next piece a closing element?
@@ -484,7 +600,12 @@ function Importerv3() {
                     }
                     else {
                         //good place to look for empty spans
-                        if (ignoreEndTags.hasOwnProperty(topLevel[i].match(/(?<=^<\/).*?(?=>)/)) && ignoreEndTags[topLevel[i].match(/(?<=^<\/).*?(?=>)/)] == true) {
+                        if (tablePChecker == true && topLevel[i].match(/(?<=^<\/).*?(?=>)/) == 'p' && ignoreEndTags.hasOwnProperty('span') && ignoreEndTags['span'] == false) {
+                            importedHTML[currIndex] += '</span>';
+                            topLevel[i] = topLevel[i].replace(/^<\/.*?>/, '');
+                            tablePChecker = false;
+                        }
+                        else if (ignoreEndTags.hasOwnProperty(topLevel[i].match(/(?<=^<\/).*?(?=>)/)) && ignoreEndTags[topLevel[i].match(/(?<=^<\/).*?(?=>)/)] == true) {
                             ignoreEndTags[currentParentElement] = false;
                             topLevel[i] = topLevel[i].replace(/^<\/.*?>/, '');
                         }
@@ -517,14 +638,14 @@ function Importerv3() {
             setHTML(importedHTML);
 
         }
-
+        setSorting(true);
         console.log(importedHTML);
     }
 
     const setupMD = function (mdText) {
         mdText = mdText.split("\n").filter(function (e) { return e })
         let i = 0;
-        while (i < mdText.length && !mdText[i].match('<img src=')) {
+        while (i < mdText.length && !mdText[i].match('.*\/image')) {
             i += 1;
         }
         let mdImages = []
@@ -532,6 +653,7 @@ function Importerv3() {
             mdImages.push(mdText[i]);
             i += 1;
         }
+        console.log(mdImages);
         setNumImages(mdImages.length);
         setMD(mdImages);
     }
@@ -579,11 +701,10 @@ function Importerv3() {
         let htmlContent = await file[file.length - 1].text();
         setupStyles(htmlContent.split('/head>')[0]);
         setupHTML(htmlContent);
-        setupMD(mdText);
+        //setupMD(mdText);
         resolveSpace();
-        setSorting(true);
-        console.log(numImages);
-        console.log('here');
+        //console.log(numImages);
+        //console.log('here');
         //console.log(importedHTML);
     }
 
@@ -596,6 +717,18 @@ function Importerv3() {
             throw new Error('Please have your HTML file last (rename it to be last in the file directory)');
         }
         await setupProgram(file);
+    }
+
+    //numImages is the number of images in markdown
+    //TODO
+    const checkForDuplicateImages = () => {
+        if (numImages >= files.length - 2) {
+
+        }
+        else {
+            throw new Error("The number of images supplied does not match the number of images found in the google doc. Please make sure all positioned images are 'move with text' and not 'fix position to page'.")
+        }
+        modifyFiles();
     }
 
     return (

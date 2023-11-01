@@ -5,7 +5,39 @@ sidebar_position: 2
 
 # Superstructure Machining
 
-Start by cutting all tube stock and hex shaft listed as part of the Superstructure in the cut list. Their names all begin with &ldquo;02_Superstructure.&rdquo; The first piece to be machined further are the&nbsp;<span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>s.
+<details >
+    <summary>
+    Sectional Video
+    </summary>
+    <div>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/oVgAc-nTEOU">
+    </iframe>
+    </div>
+</details>
+
+<details >
+    <summary>
+    Relevant Skill Videos
+    </summary>
+    <div>
+        <a href="http://localhost:3000/ebot/fundamentals/tools-and-machinery/reading-part-drawings" target="_blank">Reading Part Drawings</a>
+    </div>
+    <br/>
+    <div>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/M8fAF0xMxBs">
+    </iframe>
+    </div>
+    <br/>
+    <div>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/def5QH7UUIU">
+    </iframe>
+    </div>
+</details>
+
+<span/>Start by cutting all tube stock and hex shaft listed as part of the Superstructure in the cut list. Their names all begin with &ldquo;02_Superstructure.&rdquo; The first piece to be machined further are the&nbsp;<span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>s.
 
 <p><br /> </p>
 
@@ -15,7 +47,7 @@ Many of the holes pictured do not have a dimension. These holes are for attachin
 
 <p><br /> <br /> </p>
 
-The holes in the upright can be made in one of two ways. They could simply be dimensioned out using calipers to mark the offset from the side rail and bottom, then center punched and drilled out. Alternatively, they can be placed in the chassis, clamped down, and drilled out. The <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>s are not meant to be flush to the chassis back plate, there is a 1/8&rdquo; gap between them. To fix that, put a piece of chassis cutoff between the back of the chassis and the <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>. Then clamp the <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>&nbsp;in place, use a speed square to make sure the upright is perpendicular to the frame, and drill out the 1/4&rdquo; hole. Pictures of this method are shown below. These holes are drilled all the way through <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>.
+<span/>The holes in the upright can be made in one of two ways. They could simply be dimensioned out using calipers to mark the offset from the side rail and bottom, then center punched and drilled out. Alternatively, they can be placed in the chassis, clamped down, and drilled out. The <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>s are not meant to be flush to the chassis back plate, there is a 1/8&rdquo; gap between them. To fix that, put a piece of chassis cutoff between the back of the chassis and the <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>. Then clamp the <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>&nbsp;in place, use a speed square to make sure the upright is perpendicular to the frame, and drill out the 1/4&rdquo; hole. Pictures of this method are shown below. These holes are drilled all the way through <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Upright</span>.
 
 <p><br />  </p>
 
@@ -39,7 +71,7 @@ At first glance this part looks very challenging but becomes significantly easie
 
 <p><br /> </p>
 
-You will be making two of these <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Mainbeam</span>s. The main focus is the following: the 1.125&rdquo; bearing holes need to line up nicely as there will be a long hex shaft running between them and the holes must be as straight as possible. To help with the holes lining up it may be best to clamp these pieces of tube stock together on their 2&rdquo; faces. Make sure to use plenty of camps, we want to avoid the tube stock shifting during drilling at all costs.
+<span/>You will be making two of these <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Mainbeam</span>s. The main focus is the following: the 1.125&rdquo; bearing holes need to line up nicely as there will be a long hex shaft running between them and the holes must be as straight as possible. To help with the holes lining up it may be best to clamp these pieces of tube stock together on their 2&rdquo; faces. Make sure to use plenty of camps, we want to avoid the tube stock shifting during drilling at all costs.
 
 <p><br /> </p>
 
@@ -47,7 +79,7 @@ After clamping the tube stock together, start by scribing the location of the lo
 
 <p><br /> </p>
 
-Locate one of the Thrifty Bearing Megaplates. Looking at the image below, locate the edge marked in red of the Bearing Megaplate 4.425&rdquo; up from the bottom of the <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Mainbeam</span>s and&nbsp;clamp the Bearing Megaplate in the orientation shown, making sure to double check the plate is at the correct distance. Then drill <div style={{overflow: 'hidden', float: 'right', display: 'inline-block', margin: '2.00px 2.00px'}}><span style={{float: 'right', overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px', border: '0.00px solid #000000', transform: 'rotate(0.00rad) translateZ(0px)',  width: '343.64px', height: '169.90px'}}><img src={require("/static/media/superstructure/superstructure/image_4.png").default} style={{ width: '343.64px', height: '169.90px', marginLeft: '0.00px', marginTop: '0.00px', transform: 'rotate(0.00rad) translateZ(0px)', maxWidth: "none"}}></img></span></div> out the four holes in the 2&rdquo; circle around the bearing hole all the way through the box tube with a #7 drill bit. Two of these holes are already this size on the Bearing Megaplate, the other two holes are smaller than the #7 drill bit and will be drilled out in both the Bearing Megaplate and the tube stock. Using a drill press is highly recommended to make these holes as straight as possible.
+<span/>Locate one of the Thrifty Bearing Megaplates. Looking at the image below, locate the edge marked in red of the Bearing Megaplate 4.425&rdquo; up from the bottom of the <span style={{ backgroundColor: "#c9daf8"}}>02_Superstructure_Mainbeam</span>s and&nbsp;clamp the Bearing Megaplate in the orientation shown, making sure to double check the plate is at the correct distance. Then drill <div style={{overflow: 'hidden', float: 'right', display: 'inline-block', margin: '2.00px 2.00px'}}><span style={{float: 'right', overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px', border: '0.00px solid #000000', transform: 'rotate(0.00rad) translateZ(0px)',  width: '343.64px', height: '169.90px'}}><img src={require("/static/media/superstructure/superstructure/image_4.png").default} style={{ width: '343.64px', height: '169.90px', marginLeft: '0.00px', marginTop: '0.00px', transform: 'rotate(0.00rad) translateZ(0px)', maxWidth: "none"}}></img></span></div> out the four holes in the 2&rdquo; circle around the bearing hole all the way through the box tube with a #7 drill bit. Two of these holes are already this size on the Bearing Megaplate, the other two holes are smaller than the #7 drill bit and will be drilled out in both the Bearing Megaplate and the tube stock. Using a drill press is highly recommended to make these holes as straight as possible.
 
 <p><br /> </p>
 
@@ -79,7 +111,7 @@ Once those holes are drilled out you will have completed the machining for the h
 
 <div style={{overflow: 'hidden', float: 'left', display: 'inline-block', margin: '2.00px 2.00px'}}><span style={{float: 'left', overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px', border: '0.00px solid #000000', transform: 'rotate(0.00rad) translateZ(0px)',  width: '323.00px', height: '775.00px'}}><img src={require("/static/media/superstructure/superstructure/image_6.png").default} style={{ width: '323.00px', height: '775.00px', marginLeft: '0.00px', marginTop: '0.00px', transform: 'rotate(0.00rad) translateZ(0px)', maxWidth: "none"}}></img></span></div>
 
-The <span style={{ backgroundColor: "#d9ead3"}}>02_Superstructure_Support</span>&nbsp;is extremely straightforward compared to the previous two pieces of tube stock. Use calipers to scribe the first hole and make a thru hole using a 1/4&rdquo; drill bit. The top angle can be cut the same way as before, scribe a mark 0.58&rdquo; down the edge and use a straightedge to draw a line to the corner to cut across.
+<span/>The <span style={{ backgroundColor: "#d9ead3"}}>02_Superstructure_Support</span>&nbsp;is extremely straightforward compared to the previous two pieces of tube stock. Use calipers to scribe the first hole and make a thru hole using a 1/4&rdquo; drill bit. The top angle can be cut the same way as before, scribe a mark 0.58&rdquo; down the edge and use a straightedge to draw a line to the corner to cut across.
 
 
 <p><br /> <br /> <br /> <br /> <br /> <br /> </p>

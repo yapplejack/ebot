@@ -5,6 +5,28 @@ sidebar_position: 1
 
 # Chassis Overview
 
+<details >
+    <summary>
+    Sectional Video
+    </summary>
+    <div>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/def5QH7UUIU">
+    </iframe>
+    </div>
+</details>
+
+<details >
+    <summary>
+    Relevant Skill Videos
+    </summary>
+    <div>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/def5QH7UUIU">
+    </iframe>
+    </div>
+</details>
+
 Required tools:
 
 <ul><li>1/4&rdquo; socket and ratchet (preferred) or flat blade screwdriver or bit</li><li>1/2&rdquo; wrench</li><li>9/16&rdquo; wrenches or sockets</li><li>7/16&rdquo; or similar size socket</li></ul>

@@ -5,6 +5,17 @@ sidebar_position: 3
 
 # Wheel assembly
 
+<details >
+    <summary>
+    Sectional Video
+    </summary>
+    <div>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/def5QH7UUIU">
+    </iframe>
+    </div>
+</details>
+
 Start assembling the wheels by screwing two pulley halves into one side of each wheel. Each half-pulley (AndyMark part number am-2234a-half) has one raised screw hole and one recessed screw hole on the bottom. Connect two halves together by lining the raised portion of one half with the recessed hole on the other. The ridged portion of the pulley that the belt will actually ride on should line up across the two pulleys with no gaps or misaligned teeth. The pulley is then screwed into the matching hole pattern on one side of the 6&rdquo; HiGrip wheel (am-0940b) using six 10-12 1.25&rdquo; screws (am-1592). Tighten these bolts in a star pattern like you would when changing a tire on a car to ensure the pulley is aligned evenly on the wheel.
 
 <div style={{ textAlign: 'center'}}><div style={{overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px'}}><span style={{overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px', border: '0.00px solid #000000', transform: 'rotate(0.00rad) translateZ(0px)',  width: '385.00px', height: '174.40px'}}><img src={require("/static/media/chassis/chassis/image_6.jpg").default} style={{ width: '385.00px', height: '203.97px', marginLeft: '0.00px', marginTop: '-14.78px', transform: 'rotate(0.00rad) translateZ(0px)', maxWidth: "none"}}></img></span></div><div style={{overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px'}}><span style={{overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px', border: '0.00px solid #000000', transform: 'rotate(0.00rad) translateZ(0px)',  width: '90.50px', height: '173.86px'}}><img src={require("/static/media/chassis/chassis/image_7.jpg").default} style={{ width: '205.55px', height: '451.29px', marginLeft: '-35.12px', marginTop: '-91.06px', transform: 'rotate(0.00rad) translateZ(0px)', maxWidth: "none"}}></img></span></div><div style={{overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px'}}><span style={{overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px', border: '0.00px solid #000000', transform: 'rotate(0.00rad) translateZ(0px)',  width: '196.90px', height: '175.90px'}}><img src={require("/static/media/chassis/chassis/image_8.jpg").default} style={{ width: '460.29px', height: '209.02px', marginLeft: '-90.78px', marginTop: '-13.75px', transform: 'rotate(0.00rad) translateZ(0px)', maxWidth: "none"}}></img></span></div></div>

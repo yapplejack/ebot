@@ -2,68 +2,44 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-const FeatureList = [
-  {
-    title: 'Imbedable Youtube Videos',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Youtube vidoes can easily be added in either the sidebar or at the top of each subsection. <br /> <br />
-        This allows the manual and videos to fully integrate with each other and allows for pre-recorded skill videos when appropriate to the section.
-      </>
-    ),
-  },
-  {
-    title: 'Goodbye Monster Google Doc',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        150 page Google Docs do not perform well, with ~400 image load times can be terrible especially on low spec computers. <br /><br />
-        Additionally printing can be a haste and general naviagtion is a pain. 
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
-
-function Feature({Svg, title, description}) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
-
 export default function HomepageFeatures() {
   return (
     <div className="text--center">
-    <h1>Embed Vidoes</h1>
-    <p>Videos cna easily be integrated at the top of page or in the sidebar, allowing for the best integration between videos and manual.</p>
-    <details className={styles.details}>
-      <summary>
-        Build Video for Section
-      </summary>
+      <div style={{ textAlign: 'center' }}><img src={require("/static/media/Logos/Everybot118.webp").default}></img></div>
+      <br></br>
+      <h1>Welcome to the Everybot Documentation Site</h1>
+      <br></br><br></br><br></br>
+      <h3>At the top you will find:  </h3>
       <div>
-      <iframe width="420" height="315"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY">
-      </iframe>
+        <ul style={{ textAlign: 'center', listStylePosition: 'inside', marginBottom: '5px' }}>
+          <li>
+            Step-by-step instructions on how to build the Everybot with integrated videos
+          </li>
+          <li>
+            Resources to teach some of the core basic concepts used to build the Everybot and robots in general
+          </li>
+          <li>
+            Posts that document major updates for those building the Everybot as well as updates or large changes in the manual
+          </li>
+          <li>
+            The Everybot website which contains links to other major materials like the Bill of Materials or Cut List and the Everybot merch shop.
+          </li>
+        </ul>
       </div>
-    </details>
+      <br></br><br></br>
+      <h3>To learn more about using the website and the structure of the website use this link (work in progress)</h3>
+      <br></br><br></br><br></br><br></br>
+      <div style={{ position: "relative", textAlign: 'center', left: "50%", transform: "translate(-50%)", width: '900px' }}>
+        <h2>
+          Author's notes
+        </h2>
+        <br></br>
+        <iframe width="420" height="315"
+          src="https://www.youtube.com/embed/610y6_hh8vo" allow='fullscreen'>
+        </iframe>
+        <br></br>
+        <br></br><br></br>
+      </div>
     </div>
   );
 }

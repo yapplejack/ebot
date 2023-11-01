@@ -7,7 +7,7 @@ const path = require("path");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Everybud',
+  title: 'Everydocs',
   tagline: 'Everybot is best',
   favicon: 'img/favicon.ico',
 
@@ -45,7 +45,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           //editUrl:
-            //'https://github.com/yapplejack/yapplebot-test/tree/main',
+          //'https://github.com/yapplejack/yapplebot-test/tree/main',
         },
         blog: {
           showReadingTime: true,
@@ -63,16 +63,16 @@ const config = {
 
   plugins: [
     [
-          path.join(__dirname, '/cropper-plugin'),
-          { // this is the options object passed to the plugin
-              routes: [
-                  { // using Route schema from react-router
-                      path: '/ebot/crop',
-                      exact: false, // this is needed for sub-routes to match!
-                      component: '/cropper-plugin/Importerv3.js',
-                  }
-              ]
-          },
+      path.join(__dirname, '/cropper-plugin'),
+      { // this is the options object passed to the plugin
+        routes: [
+          { // using Route schema from react-router
+            path: '/ebot/crop',
+            exact: false, // this is needed for sub-routes to match!
+            component: '/cropper-plugin/Importerv3.js',
+          }
+        ]
+      },
     ],
     /*
     [
@@ -106,12 +106,12 @@ const config = {
             position: 'left',
             label: '2023 Everybot Manual',
           },
-          { type: 'docSidebar', sidebarId: 'fundamentalSidebar', label: 'Fundamentals Of FRC', position: 'left'},
-          {type: 'docSidebar', sidebarId: 'aboutSidebar', label: 'About This Site', position: 'left'},
-          {to: '/blog', label: 'Updates', position: 'left'},
+          { type: 'docSidebar', sidebarId: 'fundamentalSidebar', label: 'Fundamentals Of FRC', position: 'left' },
+          { type: 'docSidebar', sidebarId: 'aboutSidebar', label: 'About This Site', position: 'left' },
+          { to: '/blog', label: 'Updates', position: 'left' },
           {
             href: 'https://www.118everybot.org/',
-            label: 'Current Everybot Website',
+            label: 'Everybot Hub Website',
             position: 'right',
           },
           //{to: '/resources', label: 'Team Resources', position: 'left'},
@@ -124,34 +124,43 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'The Robonauts',
+                href: 'https://www.118robonauts.org/',
+              },
+              {
+                label: 'Chief Delphi',
+                href: 'https://www.chiefdelphi.com/t/the-2023-robonauts-everybot-low-resource-build/421783',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.gg/n6CUjpmDV6',
               },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
+
             ],
           },
           {
-            title: 'More',
+            title: 'Media',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Twitter',
+                href: 'https://twitter.com/Everybot118',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Youtube',
+                href: 'https://www.youtube.com/watch?v=def5QH7UUIU',
+              },
+              {
+                label: 'Facebook',
+                href: 'https://www.facebook.com/robonauts118/?ref=search&__tn__=%2Cd%2CP-R&eid=ARBZvFP989_-pZR1dH-xcUnEV8X-p8AfJM1VI-32lJC85VAWmPu1eDtH486B-EeNrA9dTS32brY6mCg1',
+              },
+              {
+                label: 'Instagram',
+                href: 'https://www.instagram.com/robonauts118/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} THE ROBONAUTS`,
       },
       prism: {
         theme: lightCodeTheme,
