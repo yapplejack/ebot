@@ -2,19 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/ebot/blog</id>
     <title>Everydocs Blog</title>
-    <updated>2023-08-01T00:00:00.000Z</updated>
+    <updated>2023-02-13T18:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/ebot/blog"/>
     <subtitle>Everydocs Blog</subtitle>
     <icon>https://github.com/ebot/img/favicon.ico</icon>
     <rights>Copyright © 2023 Facebook, Inc.</rights>
     <entry>
-        <title type="html"><![CDATA[Major bug fixes]]></title>
-        <id>https://github.com/ebot/blog/08-1-release</id>
-        <link href="https://github.com/ebot/blog/08-1-release"/>
-        <updated>2023-08-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Mobile should now be fully functional and dark mode should be working.]]></summary>
-        <content type="html"><![CDATA[<p>Mobile should now be fully functional and dark mode should be working.</p>]]></content>
+        <title type="html"><![CDATA[The Finishing Touches section has been released]]></title>
+        <id>https://github.com/ebot/blog/finishing-touches-released</id>
+        <link href="https://github.com/ebot/blog/finishing-touches-released"/>
+        <updated>2023-02-13T18:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Sup, we released our finishing touches build section along with the videos.]]></summary>
+        <content type="html"><![CDATA[<p>Sup, we released our finishing touches build section along with the videos.</p>]]></content>
         <author>
             <name>Jack Ferguson</name>
             <uri>https://www.118everybot.org/</uri>
@@ -24,7 +24,7 @@
         <title type="html"><![CDATA[Supply Issues with the 90 MaxPlanetary]]></title>
         <id>https://github.com/ebot/blog/supply</id>
         <link href="https://github.com/ebot/blog/supply"/>
-        <updated>2023-02-01T00:00:00.000Z</updated>
+        <updated>2023-02-01T18:00:00.000Z</updated>
         <summary type="html"><![CDATA[Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:]]></summary>
         <content type="html"><![CDATA[<p>Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:</p>]]></content>
         <author>
