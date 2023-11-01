@@ -7,6 +7,7 @@
     <link rel="alternate" href="https://github.com/ebot/blog"/>
     <subtitle>Everydocs Blog</subtitle>
     <icon>https://github.com/ebot/img/favicon.ico</icon>
+    <rights>Copyright © 2023 Facebook, Inc.</rights>
     <entry>
         <title type="html"><![CDATA[Major bug fixes]]></title>
         <id>https://github.com/ebot/blog/08-1-release</id>
@@ -31,18 +32,5 @@
             <uri>https://www.118everybot.org/</uri>
         </author>
         <category label="feeling out of stock" term="feeling out of stock"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Arm Superstructure Build Section is out and minor additions]]></title>
-        <id>https://github.com/ebot/blog/one-26-release</id>
-        <link href="https://github.com/ebot/blog/one-26-release"/>
-        <updated>2023-01-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Sup, we released our arm superstructure build section along with the videos.]]></summary>
-        <content type="html"><![CDATA[<p>Sup, we released our arm superstructure build section along with the videos.</p><p>Additionally we forgot to add the chassis cutoff step to the superstructure section, you can find it at the end of section.</p>]]></content>
-        <author>
-            <name>Jack Ferguson</name>
-            <uri>https://www.118everybot.org/</uri>
-        </author>
-        <category label="feeling in stock" term="feeling in stock"/>
     </entry>
 </feed>

@@ -1,0 +1,36 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Everydocs Blog",
+    "home_page_url": "https://github.com/ebot/blog",
+    "description": "Everydocs Blog",
+    "items": [
+        {
+            "id": "https://github.com/ebot/blog/08-1-release",
+            "content_html": "<p>Mobile should now be fully functional and dark mode should be working.</p>",
+            "url": "https://github.com/ebot/blog/08-1-release",
+            "title": "Major bug fixes",
+            "summary": "Mobile should now be fully functional and dark mode should be working.",
+            "date_modified": "2023-08-01T00:00:00.000Z",
+            "author": {
+                "name": "Jack Ferguson",
+                "url": "https://www.118everybot.org/"
+            },
+            "tags": []
+        },
+        {
+            "id": "https://github.com/ebot/blog/supply",
+            "content_html": "<p>Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:</p>",
+            "url": "https://github.com/ebot/blog/supply",
+            "title": "Supply Issues with the 90 MaxPlanetary",
+            "summary": "Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:",
+            "date_modified": "2023-02-01T00:00:00.000Z",
+            "author": {
+                "name": "Jack Ferguson",
+                "url": "https://www.118everybot.org/"
+            },
+            "tags": [
+                "feeling out of stock"
+            ]
+        }
+    ]
+}
