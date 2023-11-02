@@ -1,8 +1,8 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Everydocs Blog",
+    "title": "Everybot Docs Blog",
     "home_page_url": "https://github.com/ebot/blog",
-    "description": "Everydocs Blog",
+    "description": "Everybot Docs Blog",
     "items": [
         {
             "id": "https://github.com/ebot/blog/finishing-touches-released",
@@ -15,7 +15,10 @@
                 "name": "Jack Ferguson",
                 "url": "https://www.118everybot.org/"
             },
-            "tags": []
+            "tags": [
+                "Manual Additions",
+                "Videos Released"
+            ]
         },
         {
             "id": "https://github.com/ebot/blog/supply",
@@ -29,7 +32,7 @@
                 "url": "https://www.118everybot.org/"
             },
             "tags": [
-                "feeling out of stock"
+                "BOM Stock"
             ]
         }
     ]

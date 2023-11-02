@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/ebot/blog</id>
-    <title>Everydocs Blog</title>
+    <title>Everybot Docs Blog</title>
     <updated>2023-02-13T18:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/ebot/blog"/>
-    <subtitle>Everydocs Blog</subtitle>
+    <subtitle>Everybot Docs Blog</subtitle>
     <icon>https://github.com/ebot/img/favicon.ico</icon>
     <rights>Copyright © 2023 Facebook, Inc.</rights>
     <entry>
@@ -19,6 +19,8 @@
             <name>Jack Ferguson</name>
             <uri>https://www.118everybot.org/</uri>
         </author>
+        <category label="Manual Additions" term="Manual Additions"/>
+        <category label="Videos Released" term="Videos Released"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Supply Issues with the 90 MaxPlanetary]]></title>
@@ -31,6 +33,6 @@
             <name>Jack Ferguson</name>
             <uri>https://www.118everybot.org/</uri>
         </author>
-        <category label="feeling out of stock" term="feeling out of stock"/>
+        <category label="BOM Stock" term="BOM Stock"/>
     </entry>
 </feed>

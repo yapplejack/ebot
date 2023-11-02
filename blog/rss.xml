@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Everydocs Blog</title>
+        <title>Everybot Docs Blog</title>
         <link>https://github.com/ebot/blog</link>
-        <description>Everydocs Blog</description>
+        <description>Everybot Docs Blog</description>
         <lastBuildDate>Mon, 13 Feb 2023 18:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
@@ -16,6 +16,8 @@
             <pubDate>Mon, 13 Feb 2023 18:00:00 GMT</pubDate>
             <description><![CDATA[Sup, we released our finishing touches build section along with the videos.]]></description>
             <content:encoded><![CDATA[<p>Sup, we released our finishing touches build section along with the videos.</p>]]></content:encoded>
+            <category>Manual Additions</category>
+            <category>Videos Released</category>
         </item>
         <item>
             <title><![CDATA[Supply Issues with the 90 MaxPlanetary]]></title>
@@ -24,7 +26,7 @@
             <pubDate>Wed, 01 Feb 2023 18:00:00 GMT</pubDate>
             <description><![CDATA[Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:]]></description>
             <content:encoded><![CDATA[<p>Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:</p>]]></content:encoded>
-            <category>feeling out of stock</category>
+            <category>BOM Stock</category>
         </item>
     </channel>
 </rss>
