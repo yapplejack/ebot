@@ -722,10 +722,11 @@ function Importerv3() {
     //numImages is the number of images in markdown
     //TODO
     const checkForDuplicateImages = () => {
-        if (numImages >= files.length - 2) {
+        if (numImages >= files.length - 3) {
 
         }
         else {
+            console.log(numImages + " " + files.length)
             throw new Error("The number of images supplied does not match the number of images found in the google doc. Please make sure all positioned images are 'move with text' and not 'fix position to page'.")
         }
         modifyFiles();

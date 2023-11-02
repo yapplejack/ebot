@@ -1,6 +1,16 @@
 ---
-sidebar_label: 'Marking Parts'
+sidebar_label: 'Measurement and Marking'
 sidebar_position: 3
 ---
 
-# How to mark parts
+# Measurement and Marking
+
+TODO: Make this section
+
+<br/>
+
+Measurement tools: tape measure! calipers! squares?
+
+<br/>
+
+Marking tools: calipers, marker, scriber/center punch

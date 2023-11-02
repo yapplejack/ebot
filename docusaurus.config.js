@@ -7,8 +7,8 @@ const path = require("path");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Everydocs',
-  tagline: 'Everybot is best',
+  title: 'Everybot Docs',
+  tagline: 'Everybuddy needs an Everybuddy',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -48,6 +48,18 @@ const config = {
           //'https://github.com/yapplejack/yapplebot-test/tree/main',
         },
         blog: {
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
+            createFeedItems: async (params) => {
+              const { blogPosts, defaultCreateFeedItems, ...rest } = params;
+              return defaultCreateFeedItems({
+                // keep only the 10 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((item, index) => index < 2),
+                ...rest,
+              });
+            },
+          },
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.

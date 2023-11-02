@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Reading Part Drawings
 
-To be reworked:
+TODO: Rework this, also we crop out the part title
 
 <p><br /> </p>
 
