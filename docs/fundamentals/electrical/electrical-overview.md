@@ -5,13 +5,4 @@ sidebar_position: 1
 
 # Electrical Overview
 
-I legit don't know how to approach teaching electrical because I lack a lot of knowledge here. I can wire a whole robot but it will look like this: 
-
-<br/>
-
-<details >
-    <summary>
-    Trigger Warnings: <br/> Rats Nest <br/> Chassis Cutoff/ Door Handle for battery <br/> Chassis was conductive at one point <br/> The 40lbs under the electronics went for a stroll at states (more of a mechanical skill issue) <br/> Lack of VHB tape
-    </summary>
-    <div style={{ textAlign: 'center'}}><img src={require("/static/media/electrical/trash.jpg").default}></img></div>
-</details>
+The [WPILib](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-1/intro-to-frc-robot-wiring.html) intro to wiring robots is probably good enough to send people to. It also has a [companion video](https://www.youtube.com/watch?v=lGgIhxYuSHM).

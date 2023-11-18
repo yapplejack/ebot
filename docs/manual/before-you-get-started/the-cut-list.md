@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'The Cut List'
 sidebar_position: 4
+description: 'A guide on how to read our cut list'
 ---
 
 # The &ldquo;Cut List&rdquo;

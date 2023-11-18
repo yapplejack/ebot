@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'The Robonauts Everybot Will...'
 sidebar_position: 2
+description: "Everybot's goals within a match"
 ---
 
 # The Robonauts’ Everybot Robot Will…

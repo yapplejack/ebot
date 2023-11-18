@@ -1,0 +1,12 @@
+MD comment: [//]: # (This may be the most platform independent comment)
+
+Newline: <p><br /> </p>
+
+Center: <div style={{ textAlign: 'center'}}></div>
+
+Pagebreak: <div style={{pageBreakAfter: 'always'}}></div>
+
+Frontmatter Docs: ---
+sidebar_label: 'Printable Section'
+sidebar_position: 4
+---

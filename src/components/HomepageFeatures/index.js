@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import { func } from 'joi';
+import Layout from "@theme/Layout";
+import BlogPostItem from "@theme/BlogPostItem";
+import { Content } from "@theme/BlogPostPage";
 
 export default function HomepageFeatures() {
+  alert("Hello, I am currently improving performance, images are not present, except in the printable section of the chassis")
   return (
-    <div class="container margin-vert--xs" style={{ margin: '0px 5%', maxWidth: '90%' }}>
-      <div class="row">
+    <div className="container margin-vert--xs" style={{ margin: '0px 10%', maxWidth: '80%' }}>
+      <div className="row">
         <Tester />
-        <div class="col col--8" >
+        <div className="col col--8" >
           <div className="text--center">
             <div style={{ textAlign: 'center' }}><img src={require("/static/media/Logos/Everybot118.webp").default}></img></div>
             <br></br>
             <h1>Welcome to the Everybot Documentation Site</h1>
+            <br>
+            </br>
+            <h2>We are currently enhancing the performance of the site, images may not show at this time.</h2>
             <br></br><br></br><br></br>
             <h3>At the top you will find:  </h3>
             <div>
@@ -32,20 +39,9 @@ export default function HomepageFeatures() {
               </ul>
             </div>
             <br></br><br></br>
-            <h3>To learn more about using the website and the structure of the website use this link (work in progress)</h3>
+            <h3>To learn more about the site and get a video tour please see About This Site</h3>
             <br></br><br></br><br></br><br></br>
           </div>
-        </div>
-        <div style={{ position: "relative", textAlign: 'center', left: "50%", transform: "translate(-50%)", width: '900px' }}>
-          <h2>
-            Author's notes
-          </h2>
-          <br></br>
-          <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/610y6_hh8vo" allow='fullscreen'>
-          </iframe>
-          <br></br>
-          <br></br><br></br>
         </div>
       </div>
     </div>
@@ -55,17 +51,20 @@ export default function HomepageFeatures() {
 function Tester() {
   const [test, setText] = useState("Error");
 
-  function getText() {
-    fetch('https://yapplejack.github.io/ebot/blog/feed.json')
-      .then((response) => response.json())
-      .then((json) => setText(json.items))
-      .catch(error => console.log(error));
+  useEffect(() => {
+    blogs();
+  }, [])
+
+  const blogs = async () => {
+    const response = await fetch('https://yapplejack.github.io/ebot/blog/feed.json');
+    let text = await response.json();
+    setText(text.items);
   }
 
-  getText();
+  //getText();
 
   if (test == "Error") {
-    return <aside class="col col--2"></aside>
+    return <aside className="col col--2"></aside>
   }
 
   let firstBlog = "/ebot" + test[0].id.match(/\/blog\/.*/);
@@ -73,7 +72,9 @@ function Tester() {
   let thirdBlog = "/ebot" + test[1].id.match(/\/blog\/.*/);
 
   return (
-    <aside class="col col--2"><nav class="sidebar_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module thin-scrollbar" aria-label="Blog recent posts navigation"><div class="sidebarItemTitle_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module margin-bottom--md">Recent Updates</div><ul class="sidebarItemList_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module clean-list"><li class="sidebarItem_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module"><a class="sidebarItemLink_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module" href={firstBlog}>{test[0].title}</a></li><li class="sidebarItem_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module"><a class="sidebarItemLink_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module" href={secondBlog}>{test[1].title}</a></li></ul></nav></aside>
+    <aside className="col col--2"><nav className="sidebar_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module thin-scrollbar" aria-label="Blog recent posts navigation" style={{
+      top: "calc(var(--ifm-navbar-height) + 2rem)", position: "sticky", maxHeight: "calc(100vh - (var(--ifm-navbar-height) + 2rem))", overflowY: "auto"
+    }}><h3 className={styles.updates}>Recent Updates</h3><ul className="sidebarItemList_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module clean-list"><li className="sidebarItem_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module"><a className={styles.details} href={firstBlog}>{test[0].title}</a></li><li className="sidebarItem_node_modules-@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module"><a className={styles.details} href={secondBlog}>{test[1].title}</a></li></ul></nav></aside >
   );
 }
 

@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Printable Section'
 sidebar_position: 8
+description: 'Use ctrl + p to print this section'
 ---
 
 # Before you get started

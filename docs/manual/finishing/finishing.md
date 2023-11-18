@@ -3,7 +3,7 @@ sidebar_label: 'Printable Section'
 sidebar_position: 4
 ---
 
-# Finishing and Tuning the Arm 
+# Finishing and Tuning the Arm
 
 <p><br /> </p>
 

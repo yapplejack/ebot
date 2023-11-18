@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Navigating Our Resources'
 sidebar_position: 7
+description: 'Documents meant be used alongside this'
 ---
 
 # Navigating Our Resources

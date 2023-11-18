@@ -1,7 +1,6 @@
 ---
 slug: supply
-title: Supply Issues with the 90 MaxPlanetary
-authors: [jack]
+title: Supply Issues With The 90 Degree MaxPlanetary
 tags: [BOM Stock]
 date: 2023-02-01T18:00
 ---

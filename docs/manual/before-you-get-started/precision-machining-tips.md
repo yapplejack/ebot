@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Precision Machining Tips'
 sidebar_position: 5
+description: 'Content to prepare you for robot construction'
 ---
 
 # Precision Machining Tips

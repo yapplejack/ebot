@@ -1,15 +1,60 @@
 ---
 sidebar_label: 'About This Site'
-sidebar_position: 2
+sidebar_position: 1
 header-includes:
   - \pagenumbering{gobble}
 ---
 
 # About This Site
 
+<details >
+    <summary>
+    Video Tour and Ideology
+    </summary>
+    <div>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/610y6_hh8vo" allow='fullscreen'>
+    </iframe>
+    </div>
+</details>
+
 ## What is this?
 
-This is a website is uses a markdown-folder-structure based react app called Docusaurus. More importantly this is attempt at improving the documentation for the Everybot and creating a home for additional FRC resources.
+This is a website that uses a markdown-folder-structure based react app called Docusaurus. More importantly this is attempt at improving the documentation for the Everybot and creating a home for additional FRC resources.
+
+<hr/>
+
+### Goals
+
+<ul>
+    <li>
+    Create a platform that allows for the manual and build videos to have a symbiotic relationship
+    </li>
+    <br/>
+    <li>
+    Move away Google Doc as the public facing manual without heavily sacrificing collaboration, printability or ease of use
+    </li>
+    <br/>
+    <li>
+    Use Google Docs internally for creating the content of the manual to ensure no barriers exist for those who want to contribute
+    </li>
+    <br/>
+    <li>
+    Improve navigation of the manual
+    </li>
+    <br/>
+    <li>
+    Host resources relevant to Everybot and low resource teams in both video and text
+    </li>
+    <br/>
+    <li>
+    Allow for the integration of those resources into the manual to give more context and cut down on what needs to be filmed for a section 
+    </li>
+    <br/>
+    <li>
+    Provide updates to teams on additions/changes to the manual and major events (critical out of stock components, etc.) 
+    </li>
+</ul>
 
 <hr/>
 
@@ -19,7 +64,7 @@ Currently I have converted some of the manual into markdown in the docs section.
 
 <p> <br /> </p>
 
-Additionally there is some scaffolding for a fundamentals of FRC section, meant to exist as a wiki for low resource robotics. 
+There is some scaffolding for a fundamentals of FRC section, meant to exist as a wiki for low resource robotics. Additionally it could be the home for our skill videos, which will be discussed in a later section.  
 
 <p> <br /> </p>
 
@@ -27,7 +72,7 @@ There is also a updates section that could be used to let people know when there
 
 <p> <br /> </p>
 
-Lastly there is an algorithm that is able to process takes the output of my script and HTML from a Google Doc and converts it into a markdown file.
+Lastly there is an algorithm that is able to takes Google docs and converts them into a markdown file.
 
 <hr/>
 
@@ -37,7 +82,7 @@ After my time working on both the documentation and build videos I was disappoin
 
 <br/>
 
-I have looked into alternatives to Google Docs, specifically GitBook, which both REV and WCP use but I found it lacking. You have to pay to allow your docs to be printed (and they do not look good when converted to PDF), their Google Doc conversion is worse than mine and they lack a lot of customization.
+I have looked into alternatives for Google Docs, specifically GitBook, which both REV and WCP use but I found it lacking. Video integration doesn't work too well, their printing is a paid feature (and doesn't function well), their Google Doc conversion is significantly worse than mine and they lack a lot of customization.
 
 <br/>
 
@@ -56,11 +101,15 @@ The main goal that I set out with was for each section to allow for embedded vid
     </div>
 </details>
 
-Notable these videos do not sacrifice printing as they hide themselves when using ctrl + p.
+<br/>
+
+Notability these videos do not sacrifice printing as they hide themselves when using ctrl + p.
 
 <br/>
 
 In addition to section specific videos it would be nice to have prerecorded videos called "skill videos" (temp name) that could be used to bolster a section and cut down on required in-season filming. These videos are what I would like to make for the fundamentals of FRC.
+
+<br/>
 
 <details >
     <summary>
@@ -106,13 +155,13 @@ With the pages being broken up as they are, users should have to load a max of 5
 
 <hr/>
 
-### How Useable is it?
+### How useable is it?
 
-It is getting close to being good. My major concerns were a massive installation requirement, lack of collaboration in the refining of the markdown articles, having people learn how to modify markdown with HTML and the webdev background required to modify the website. I have found solutions to 3.
+It is getting close to being good. My major concerns were a massive installation requirement, lack of collaboration in the refining of the markdown articles, having people learn how to modify markdown with HTML and the webdev background required to modify the website. I have found solutions to 3 of these issues.
 
 <br/>
 
-I have found an online dev environment called codesandbox that is able to handle everything. All you have to do is log in with a github account and you can start editing.
+I have found an online dev environment called codesandbox that is able to handle everything. All you have to do is log in with a github account and you can start editing, no downloads required.
 
 <br/>
 
@@ -155,4 +204,4 @@ In theory it should be easy to process an entire section like Superstructure and
 
 ### How is it hosted?
 
-Currently this running on Github Pages via the gh-pages branch in my repository for it, with the project being saved to the main branch. The website can easily be hosted for free through a variety of providers however Github pages should be good enough. GitHub pages sites may not exceed 1GB, this site is currently ~55MBs. The other issue would be the 100GB rate limit but I highly doubt this would be broken. 
+Currently this running on Github Pages via the gh-pages branch in my repository for it, with the project being saved to the main branch. The website can easily be hosted for free through a variety of providers however Github pages should be good enough. GitHub pages sites may not exceed 1GB, this site is currently ~250MBs. The other issue would be the 100GB rate limit which could require a switch to a different hosting provider but this would be easy to accommodate. 

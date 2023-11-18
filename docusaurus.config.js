@@ -48,6 +48,7 @@ const config = {
           //'https://github.com/yapplejack/yapplebot-test/tree/main',
         },
         blog: {
+          showReadingTime: false,
           feedOptions: {
             type: 'all',
             copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
@@ -60,11 +61,6 @@ const config = {
               });
             },
           },
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/yapplejack/yapplebot-test/tree/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -84,6 +80,16 @@ const config = {
             component: '/cropper-plugin/Importerv3.js',
           }
         ]
+      },
+    ],
+    [
+      require.resolve('@docusaurus/plugin-ideal-image'),
+      {
+        quality: 70,
+        max: 1200, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+        disableInDev: false,
       },
     ],
     /*
@@ -177,6 +183,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['java'],
       },
     }),
 };

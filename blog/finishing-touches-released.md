@@ -1,7 +1,6 @@
 ---
 slug: finishing-touches-released
-title: The Finishing Touches section has been released
-authors: [jack]
+title: Finishing Touches Section Released
 tags: [Manual Additions, Videos Released]
 date: 2023-02-13T18:00
 ---

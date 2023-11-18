@@ -3,10 +3,13 @@ import { useState } from 'react';
 import ReactCrop from 'react-image-crop';
 import { saveAs } from 'file-saver';
 import '/cropper-plugin/ReactCrop.css';
+import { CodeMirror } from "codemirror";
+import { MergeView, MergeConfig } from "@codemirror/merge";
+import { githubDark } from '@ddietr/codemirror-themes/github-dark'
 
 //How to use: use the proper extension (currently ebot/cropper), then add html file, images from html and md from email. mdfile goes first and html file goes last (this should be fixed)
 
-//ImporterV3 is written terribly, the 2nd iteration was cleaner but lacked features, in adding the new features I should have started from scratch but was lazy, this needs to eventually be cleaned up 
+//ImporterV3 is written terribly, the 2nd iteration was cleaner but lacked features, in adding the new features I should have started from scratch but was lazy, this needs to eventually be cleaned up
 //GL following the regex :?
 
 function Importerv3() {
@@ -52,11 +55,8 @@ function Importerv3() {
                 let htmlText = splitHTML[i].split('<img')[1].split('\.png\" ')[1];
                 let bumperPlateDir = "<img src={require(\"/static/media/"
                 let mdText = importMD[imageIndex].split('default\}')[0];
-                //console.log(index)
-                //console.log('<div style={{overflow' + splitHTML[i].split('<img')[0] + mdText + 'default\} ' + htmlText.split('\}\}')[0] + ', maxWidth: "none"\}\}' + htmlText.split('\}\}')[1]);
                 newHTML += '<div style={{overflow' + splitHTML[i].split('<img')[0] + bumperPlateDir + mdText + 'default\} ' + htmlText.split('\}\}')[0] + ', maxWidth: "none"\}\}' + htmlText.split('\}\}')[1];
                 imageIndex += 1;
-                //return mdText + 'default\} ' + htmlText.split('\}\}')[0] + ', maxWidth: "none"\}\}' + htmlText.split('\}\}')[1];
             }
             else if (splitHTML[i].match('.jpg"')) {
                 outputImages[imageIndex] = files[parseInt(splitHTML[i].split("images/")[1].split('\"')[0].split('image')[1].split('\.jpg')[0])];
@@ -732,6 +732,29 @@ function Importerv3() {
         modifyFiles();
     }
 
+    const DiffViewer = () => {
+        const mergeViewRef = React.useRef();
+        const [mergeView, setMergeView] = React.useState([]);
+
+        React.useEffect(() => {
+            const view = new MergeView({
+                a: {
+                    extensions: [githubDark],
+                    doc: "New Text Here"
+                },
+                b: {
+                    doc: "Previous Text Here"
+                },
+                parent: mergeViewRef.current,
+                revertControls: "a-to-b"
+            });
+
+            setMergeView(view);
+        }, []);
+
+        return <div ref={mergeViewRef} />;
+    };
+
     return (
         <div className="Importer">
             <center>
@@ -743,101 +766,9 @@ function Importerv3() {
                 />
 
             </center>
+            <DiffViewer />
         </div>
     );
 }
 
 export default Importerv3;
-
-
-
-/*
-const setupHTML = function (htmlContent) {
-        htmlContent = htmlContent.split('</head>')[1].split('</p>');
-        let numSpaces = 0;
-        let currIndex = 0;
-        let imageNum = 0;
-        for(let i = 0; i < htmlContent.length - 1; i++)
-        {
-            let htmlP = htmlContent[i].split('</span>');
-            let textCollection = [];
-            let textIndex = 0;
-            let pBreak = false;
-            for(let j = 0; j < htmlP.length; j++)
-            {
-                if(htmlP[j] != '')
-                {
-                    if(htmlP[j].match(/hr\sstyle=/i))
-                    {
-                        pBreak = true;
-                    }
-                    else if(htmlP[j].split('<span')[1].match(/\d\">$/) && !htmlP[j].split('span')[1].match(/style/i))
-                    {
-                        numSpaces += 1;
-                    }
-                    else if(numSpaces > 0)
-                    {
-                        let space = "<p>";
-                        for(let j =0; j < numSpaces; j++)
-                        {
-                            space += '<br /> '
-                        }
-                        space += '</p>'
-                        numSpaces = 0;
-                        importedHTML[currIndex] = ['space', space];
-                        currIndex += 1;
-                    }
-                    if(!htmlP[j].match(/hr\sstyle=/i) && htmlP[j].split('span')[1].match(/style=\"o/i))
-                    {
-                        if(textCollection.length > 0)
-                        {
-                            for(let j = 1; j < textCollection.length; j++)
-                            {
-                                textCollection[0] += textCollection[j];
-                            }
-                            importedHTML[currIndex] = ['text', textCollection[0]];
-                            currIndex += 1;
-                            textCollection.length = 0;
-                        }
-                        const reg = /-\webkit\-transform: 'rotate\(\d{1}\.\d{2}rad\) translateZ\(\d{1}px\)',/;
-                        let res = htmlP[j].split('span style')[1].replaceAll(";", "',").replaceAll(": ", ": '").replaceAll('margin-left', 'marginLeft').replaceAll('margin-top', 'marginTop').replace(reg, "")
-                        
-                        .replaceAll('border: 0.00px solid #000000,', '').replace('="', "").replaceAll(", -webkit-transform: 'rotate(0.00rad) translateZ(0px)',", "").replace('px,"', "px").replace('>', '}}>').replace('">', "'}}>").replace("style=", "style={{ ")
-                        .replace("px',\"", "px'").replace("\" title=\"'", "").replace("\"width", 'width');
-                        res = "<span style={{" + res + "</img> </span>";
-                        importedHTML[currIndex] = ["img", res];
-                        currIndex += 1;
-                        imageNum += 1;
-                    }
-                    else if(!htmlP[j].match(/hr\sstyle=/i) && htmlP[j].split('span')[1].match(/<\/a>/))
-                    {
-                        textCollection[textIndex] = '<a' + htmlP[j].split('<a')[1].split('<\/a>')[0] + '<\/a>';
-                        textIndex += 1;
-                    }
-                    else if(!htmlP[j].match(/hr\sstyle=/i) && numSpaces == 0)
-                    {
-                        textCollection[textIndex] = htmlP[j].split('span')[1].split('>')[1];
-                        textIndex += 1;
-                    }
-                    setHTML(importedHTML);
-                    setNumLines(currIndex);
-                    setNumImages(imageNum);
-                }
-            }
-            if(textCollection.length > 0)
-            {
-                for(let j = 1; j < textCollection.length; j++)
-                {
-                    textCollection[0] += textCollection[j];
-                }
-                importedHTML[currIndex] = ['text', textCollection[0]];
-                currIndex += 1;
-            }
-            if(pBreak == true)
-            {
-                importedHTML[currIndex] = ["break", 'pageBreak'];
-                currIndex += 1;
-            }
-        }
-    }
-*/

@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Reading Part Drawings'
 sidebar_position: 6
+description: 'How to our engineering drawings'
 ---
 
 # Reading Part Drawings 
@@ -47,5 +48,4 @@ The last dimension on this sheet is the diameter of the hole in the orange box. 
 
 <p><br /> </p>
 
-Technical drawings are complicated and can be hard to understand initially. We suggest trying to go through each drawing slowl<div style={{overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px'}}><span style={{overflow: 'hidden', display: 'inline-block', margin: '0.00px 0.00px', border: '0.00px solid #000000', transform: 'rotate(0.00rad) translateZ(0px)',  width: '0.00px', height: '0.00px'}}><img src={require("/static/media/before-you-get-started/before/image_8.jpg").default} style={{ width: '0.00px', height: '0.00px', marginLeft: '0.00px', marginTop: '0.00px', transform: 'rotate(0.00rad) translateZ(0px)', maxWidth: "none"}}></img></span></div>y and mark the parts you understand down onto your physical pieces as you go. <span style={{ fontWeight: "700"}}>
-Don’t forget to double check your work before you cut and drill!</span>
+Technical drawings are complicated and can be hard to understand initially. We suggest trying to go through each drawing slowly and mark the parts you understand down onto your physical pieces as you go. <span style={{ fontWeight: "700"}}> Don’t forget to double check your work before you cut and drill!</span>
