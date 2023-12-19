@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[1215],{90266:e=>{e.exports=JSON.parse('{"label":"BOM Stock","permalink":"/ebot/blog/tags/bom-stock","allTagsPath":"/ebot/blog/tags","count":1}')}}]);
