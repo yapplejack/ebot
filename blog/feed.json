@@ -1,0 +1,31 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Everybot Docs Blog",
+    "home_page_url": "https://github.com/ebot/blog",
+    "description": "Everybot Docs Blog",
+    "items": [
+        {
+            "id": "https://github.com/ebot/blog/finishing-touches-released",
+            "content_html": "<p>Sup, we released our finishing touches build section along with the videos.</p>",
+            "url": "https://github.com/ebot/blog/finishing-touches-released",
+            "title": "Finishing Touches Section Released",
+            "summary": "Sup, we released our finishing touches build section along with the videos.",
+            "date_modified": "2023-02-13T18:00:00.000Z",
+            "tags": [
+                "Manual Additions",
+                "Videos Released"
+            ]
+        },
+        {
+            "id": "https://github.com/ebot/blog/supply",
+            "content_html": "<p>Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:</p>",
+            "url": "https://github.com/ebot/blog/supply",
+            "title": "Supply Issues With The MAX 90 Degree Gearbox",
+            "summary": "Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:",
+            "date_modified": "2023-02-01T18:00:00.000Z",
+            "tags": [
+                "BOM Stock"
+            ]
+        }
+    ]
+}

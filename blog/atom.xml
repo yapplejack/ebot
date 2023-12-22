@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://github.com/ebot/blog</id>
+    <title>Everybot Docs Blog</title>
+    <updated>2023-02-13T18:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://github.com/ebot/blog"/>
+    <subtitle>Everybot Docs Blog</subtitle>
+    <icon>https://github.com/ebot/img/favicon.ico</icon>
+    <rights>Copyright © 2023 THE ROBONAUTS</rights>
+    <entry>
+        <title type="html"><![CDATA[Finishing Touches Section Released]]></title>
+        <id>https://github.com/ebot/blog/finishing-touches-released</id>
+        <link href="https://github.com/ebot/blog/finishing-touches-released"/>
+        <updated>2023-02-13T18:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Sup, we released our finishing touches build section along with the videos.]]></summary>
+        <content type="html"><![CDATA[<p>Sup, we released our finishing touches build section along with the videos.</p>]]></content>
+        <category label="Manual Additions" term="Manual Additions"/>
+        <category label="Videos Released" term="Videos Released"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Supply Issues With The MAX 90 Degree Gearbox]]></title>
+        <id>https://github.com/ebot/blog/supply</id>
+        <link href="https://github.com/ebot/blog/supply"/>
+        <updated>2023-02-01T18:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:]]></summary>
+        <content type="html"><![CDATA[<p>Hello all, we were informed that there are supply issues with the 90 degree gearbox, here are some fixes:</p>]]></content>
+        <category label="BOM Stock" term="BOM Stock"/>
+    </entry>
+</feed>
